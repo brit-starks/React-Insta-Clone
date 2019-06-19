@@ -3,7 +3,7 @@ import React from 'react';
 const Header = props => {
   return (
     <>
-    {/* <img src=> */}
+    <img src={props.avatar} />
     <p>{props.authorName}</p>
     </>
   )
