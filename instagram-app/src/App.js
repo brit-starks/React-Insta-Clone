@@ -24,7 +24,9 @@ class App extends React.Component {
                 <Header userImage={post.thumbnailUrl} authorName={post.username}/>
                 <Post image={post.imageUrl} likes={post.likes}/>
               </>
-              )
+            )
+            })}
+                
           })};
         </header>
       </div>
