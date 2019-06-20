@@ -3,6 +3,7 @@ import './App.css';
 import dummyData from '../src/dummy-data';
 import Header from './postContainer/Header';
 import Post from './postContainer/Post';
+import Comments from './commentsSection/Comments';
 
 class App extends React.Component {
   constructor(){
@@ -23,11 +24,10 @@ class App extends React.Component {
               <>
                 <Header userImage={post.thumbnailUrl} authorName={post.username}/>
                 <Post image={post.imageUrl} likes={post.likes}/>
+                <Comments comments={post.comments} />
               </>
             )
             })}
-                
-          })};
         </header>
       </div>
     );
