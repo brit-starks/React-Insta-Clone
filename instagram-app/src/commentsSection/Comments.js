@@ -6,10 +6,10 @@ const Comments = props => {
     <>
     {props.comments.map(comment => {
       return(
-        <>
+        <div className='post-comments'>
         {comment.username}
         {comment.text}
-        </>
+        </div>
       )
     })}
     </>

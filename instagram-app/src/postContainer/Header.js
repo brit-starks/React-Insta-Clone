@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './postcontainer.css';
 
 const Header = props => {
   return (
-    <>
-    <img src={props.userImage} />
-    <p>{props.authorName}</p>
-    </>
+    <div className='header'>
+    <img src={props.userImage} className='user-thumb'/>
+    <p className='user-name'>{props.authorName}</p>
+    </div>
   )
 }
 
