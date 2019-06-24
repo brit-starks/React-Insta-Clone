@@ -1,7 +1,7 @@
 .header {
   display: flex;
   position: relative;
-  right: 12rem;
+  right: 25rem;
 }
 
 .user-thumb {
@@ -14,4 +14,9 @@
   font-weight: bold;
   margin: 2.4rem 0 0 0;
   color: black;
+}
+
+.likes {
+  position: relative;
+  right: 28rem;
 }
