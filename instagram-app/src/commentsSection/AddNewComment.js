@@ -1,10 +1,12 @@
 import React from 'react';
 
 class AddNewComment extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-      input: '',
+      comments: props.comments,
+      comment: ''
+    
     };
   }
 
@@ -14,19 +16,28 @@ class AddNewComment extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.addComment(this.state.input);
-    this.setState({input: ''});
+    // this.props.addComment(this.state.comment);
+    this.setState({comments: [...this.state.comments, {text: this.state.comment, username:' brit'}]});
+    console.log(this.state.comment);
   };
 
   render(){
     return(
       <div>
+        
+        {this.props.comments.map(comment =>( 
+          <>
+            <p>{comment.username}</p>
+            <p>{comment.text}</p>
+          </>
+        ))}
+
         <form onSubmit={this.handleSubmit}>
           <input 
           type='text'
-          name='input'
+          name='comment'
           placeholder='Add a comment...'
-          value={this.state.input}
+          value={this.state.comment}
           onChange={this.handleChange}
           />
         </form>

@@ -6,6 +6,7 @@ const Comments = props => {
   return(
     <>
     {props.comments.map(comment => {
+      console.log(props.comments);
       return(
         <div className='post-comments'>
           <div className='commenter-username'>

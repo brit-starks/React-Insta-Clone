@@ -10,13 +10,14 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-     dummyData: [],
+     dummyData: []
     };
   }
 
   componentDidMount(){
     this.setState({dummyData: dummyData})
   }
+
 
   addComment = comment => {
     let newComment = {
@@ -37,10 +38,10 @@ class App extends React.Component {
               <>
                 <Header userImage={post.thumbnailUrl} authorName={post.username}/>
                 <Post image={post.imageUrl} likes={post.likes}/>
-                <Comments comments={post.comments} />
-                {/* <> */}
-                <AddNewComment addComment={this.addComment}/>
-                {/* </> */}
+                {/* <Comments comments={post.comments} /> */}
+                <>
+                <AddNewComment comments={post.comments} addComment={this.addComment}/>
+                </>
               </>
             )
             })}
