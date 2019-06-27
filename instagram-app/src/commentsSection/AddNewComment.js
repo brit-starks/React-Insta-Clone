@@ -4,7 +4,7 @@ class AddNewComment extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      comments: props.comments,
+      comments: this.props.comments && this.props.comments,
       comment: ''
     
     };
@@ -14,25 +14,34 @@ class AddNewComment extends React.Component {
     this.setState({[e.target.name]: e.target.value});
   };
 
-  handleSubmit = e => {
+  addComment = (comment) => {
+    let newComment = {comment: this.state.comment, username:' brit'}
+
+    this.setState({ comments:[...this.state.comments, comment]});
+  };
+
+  handleSubmit = (e, comment) => {
     e.preventDefault();
     // this.props.addComment(this.state.comment);
-    this.setState({comments: [...this.state.comments, {text: this.state.comment, username:' brit'}]});
-    console.log(this.state.comment);
+    // this.setState({comment: this.state.comment});
+    this.addComment(comment)
+  //   console.log(this.state.comment);
+  //   console.log(this.state.comments)
   };
 
   render(){
+    console.log(this.state)
     return(
       <div>
         
-        {this.props.comments.map(comment =>( 
+        {this.state.comments && this.state.comments.map(comment => ( 
           <>
             <p>{comment.username}</p>
             <p>{comment.text}</p>
           </>
         ))}
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={(e, comment) => this.handleSubmit(e, comment)}>
           <input 
           type='text'
           name='comment'

@@ -5,7 +5,7 @@ import './postcontainer.css';
 const Header = props => {
   return (
     <div className='header'>
-    <img src={props.userImage} className='user-thumb'/>
+    <img src={props.userImage} className='user-thumb' alt={props.username}/>
     <p className='user-name'>{props.authorName}</p>
     </div>
   )

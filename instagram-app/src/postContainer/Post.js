@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Post = props => {
   return(
     <div className='post'>
-      <img width='1100' src={props.image} />
+      <img width='1000' src={props.image} />
       <p className='likes'>{props.likes} likes</p>
     </div>
   );
