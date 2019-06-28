@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  position: relative;
+  right: 25rem;
+}
+
+.user-thumb {
+  height: 5rem;
+  border-radius: 80px;
+  margin: 1rem;
+}
+
+.user-name {
+  font-weight: bold;
+  margin: 2.4rem 0 0 0;
+  color: black;
+}
+
+.likes {
+  position: relative;
+  right: 28rem;
+}
