@@ -11,22 +11,17 @@ class AddNewComment extends React.Component {
   }
 
   handleChange = e => {
-    this.setState({[e.target.name]: e.target.value});
-  };
-
-  addComment = (comment) => {
-    let newComment = {comment: this.state.comment, username:' brit'}
-
-    this.setState({ comments:[...this.state.comments, comment]});
+    this.setState({[e.target.name]: e.target.value})
   };
 
   handleSubmit = (e, comment) => {
     e.preventDefault();
-    // this.props.addComment(this.state.comment);
+    this.props.addComment(this.state.comment);
     // this.setState({comment: this.state.comment});
-    this.addComment(comment)
-  //   console.log(this.state.comment);
-  //   console.log(this.state.comments)
+    this.setState({comment: ''});
+    this.props.addComment(comment)
+    console.log(this.state.comment);
+    console.log(this.state.comments)
   };
 
   render(){
@@ -36,7 +31,7 @@ class AddNewComment extends React.Component {
         
         {this.state.comments && this.state.comments.map(comment => ( 
           <>
-            <p>{comment.username}</p>
+            {/* <p>{comment.username}</p> */}
             <p>{comment.text}</p>
           </>
         ))}
